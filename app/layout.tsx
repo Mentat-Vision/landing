@@ -12,6 +12,9 @@ const shareTechMono = Share_Tech_Mono({
 export const metadata: Metadata = {
 	title: 'Mentat Industries',
 	description: 'Battle-tested tech for modern warfare',
+	icons: {
+		icon: '/mentat-red.png',
+	},
 };
 
 export default function RootLayout({

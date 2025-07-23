@@ -7,6 +7,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
+import { Typewriter } from '@/components/ui/typewriter';
 
 // Dynamically import the Tetrahedron to avoid SSR issues
 const Tetrahedron = dynamic(() => import('@/components/tetrahedron'), {
@@ -22,6 +23,7 @@ export default function Component() {
 	const { theme, setTheme } = useTheme();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
+	const [firstAnimationFinished, setFirstAnimationFinished] = useState(false);
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -246,24 +248,23 @@ export default function Component() {
 				{/* Left Content - Title */}
 				<div className='flex-1 max-w-2xl z-10'>
 					<h1 className='text-4xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight'>
-						PRECISE INTELLIGENCE.
-						<br />
-						REAL-TIME DECISIONS.
-						<br />
-						MODERN WARFARE.
+						<Typewriter
+							text='PRECISE INTELLIGENCE. REAL-TIME DECISIONS. MODERN WARFARE.'
+							speed={30}
+							onFinished={() => setFirstAnimationFinished(true)}
+						/>
 					</h1>
 				</div>
 
 				{/* Right Content - Description */}
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
-						Mentat is a real-time battlefield intelligence engine that fuses
-						video, sensor, and telemetry data from drones, UGVs, cameras, and
-						soldier-worn devices. Using edge AI models for detection, tracking,
-						and summarization, it identifies threats, maps changes, and answers
-						tactical queries via a natural language interface. Designed to run
-						offline on portable compute, Mentat delivers decision-grade
-						awareness to squads and autonomous systems operating at the edge.
+						{firstAnimationFinished && (
+							<Typewriter
+								text='Mentat is a real-time battlefield intelligence engine that fuses video, sensor, and telemetry data from drones, UGVs, cameras, and soldier-worn devices. Using edge AI models for detection, tracking, and summarization, it identifies threats, maps changes, and answers tactical queries via a natural language interface. Designed to run offline on portable compute, Mentat delivers decision-grade awareness to squads and autonomous systems operating at the edge.'
+								speed={10}
+							/>
+						)}
 					</p>
 				</div>
 			</main>
