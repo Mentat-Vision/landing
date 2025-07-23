@@ -67,21 +67,21 @@ export default function Component() {
 								d='M 60 0 L 0 0 0 60'
 								fill='none'
 								stroke={
-									isDark ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255,255,255,0.15)'
+									isDark ? 'rgba(239, 68, 68, 0.25)' : 'rgba(255,255,255,0.25)'
 								}
-								strokeWidth='0.5'
+								strokeWidth='0.7'
 								className='animate-pulse'
-								style={{ animationDuration: '3s', animationDelay: '0s' }}
+								style={{ animationDuration: '2s', animationDelay: '0s' }}
 							/>
 							<path
 								d='M 30 0 L 30 60 M 0 30 L 60 30'
 								fill='none'
 								stroke={
-									isDark ? 'rgba(239, 68, 68, 0.08)' : 'rgba(255,255,255,0.08)'
+									isDark ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255,255,255,0.15)'
 								}
-								strokeWidth='0.3'
+								strokeWidth='0.5'
 								className='animate-pulse'
-								style={{ animationDuration: '4s', animationDelay: '1s' }}
+								style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}
 							/>
 						</pattern>
 
@@ -98,10 +98,10 @@ export default function Component() {
 								width='2'
 								height='80'
 								fill={
-									isDark ? 'rgba(239, 68, 68, 0.1)' : 'rgba(255,255,255,0.1)'
+									isDark ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255,255,255,0.15)'
 								}
 								className='animate-pulse'
-								style={{ animationDuration: '2s', animationDelay: '0.5s' }}
+								style={{ animationDuration: '1.5s', animationDelay: '0.2s' }}
 							/>
 							<rect
 								x='40'
@@ -109,10 +109,10 @@ export default function Component() {
 								width='1'
 								height='80'
 								fill={
-									isDark ? 'rgba(239, 68, 68, 0.05)' : 'rgba(255,255,255,0.05)'
+									isDark ? 'rgba(239, 68, 68, 0.1)' : 'rgba(255,255,255,0.1)'
 								}
 								className='animate-pulse'
-								style={{ animationDuration: '5s', animationDelay: '2s' }}
+								style={{ animationDuration: '3s', animationDelay: '1s' }}
 							/>
 							<rect
 								x='80'
@@ -120,10 +120,10 @@ export default function Component() {
 								width='3'
 								height='80'
 								fill={
-									isDark ? 'rgba(239, 68, 68, 0.08)' : 'rgba(255,255,255,0.08)'
+									isDark ? 'rgba(239, 68, 68, 0.12)' : 'rgba(255,255,255,0.12)'
 								}
 								className='animate-pulse'
-								style={{ animationDuration: '3.5s', animationDelay: '1.5s' }}
+								style={{ animationDuration: '2.2s', animationDelay: '0.8s' }}
 							/>
 							<rect
 								x='0'
@@ -131,10 +131,10 @@ export default function Component() {
 								width='120'
 								height='1'
 								fill={
-									isDark ? 'rgba(239, 68, 68, 0.06)' : 'rgba(255,255,255,0.06)'
+									isDark ? 'rgba(239, 68, 68, 0.1)' : 'rgba(255,255,255,0.1)'
 								}
 								className='animate-pulse'
-								style={{ animationDuration: '4.5s', animationDelay: '0.8s' }}
+								style={{ animationDuration: '3.5s', animationDelay: '0.6s' }}
 							/>
 							<rect
 								x='0'
@@ -142,10 +142,10 @@ export default function Component() {
 								width='120'
 								height='2'
 								fill={
-									isDark ? 'rgba(239, 68, 68, 0.04)' : 'rgba(255,255,255,0.04)'
+									isDark ? 'rgba(239, 68, 68, 0.08)' : 'rgba(255,255,255,0.08)'
 								}
 								className='animate-pulse'
-								style={{ animationDuration: '6s', animationDelay: '3s' }}
+								style={{ animationDuration: '4s', animationDelay: '1.5s' }}
 							/>
 						</pattern>
 
@@ -162,10 +162,10 @@ export default function Component() {
 								width='4'
 								height='1'
 								fill={
-									isDark ? 'rgba(239, 68, 68, 0.02)' : 'rgba(255,255,255,0.02)'
+									isDark ? 'rgba(239, 68, 68, 0.04)' : 'rgba(255,255,255,0.04)'
 								}
 								className='animate-pulse'
-								style={{ animationDuration: '1.5s', animationDelay: '0.2s' }}
+								style={{ animationDuration: '1s', animationDelay: '0.1s' }}
 							/>
 						</pattern>
 					</defs>
@@ -177,7 +177,7 @@ export default function Component() {
 			</div>
 
 			{/* 3D Tetrahedron as Background - Full page size */}
-			<div className='absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none opacity-50'>
+			<div className='absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none opacity-70'>
 				<Tetrahedron color={tetrahedronColor} />
 			</div>
 
@@ -249,7 +249,8 @@ export default function Component() {
 				<div className='flex-1 max-w-2xl z-10'>
 					<h1 className='text-4xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight'>
 						<Typewriter
-							text='PRECISE INTELLIGENCE. REAL-TIME DECISIONS. MODERN WARFARE.'
+							text='“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”
+'
 							speed={30}
 							onFinished={() => setFirstAnimationFinished(true)}
 						/>

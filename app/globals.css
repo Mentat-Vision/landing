@@ -88,3 +88,8 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+::selection {
+	background-color: #ef4444; /* red-500 */
+	color: white;
+}
