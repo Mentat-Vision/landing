@@ -274,13 +274,15 @@ export default function Component() {
 					© 2025 Mentat Industries
 				</div>
 
-				<Button
-					variant='outline'
-					size='sm'
-					className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
-				>
-					GET IN TOUCH
-				</Button>
+				<a href='mailto:deo@arlo1.com'>
+					<Button
+						variant='outline'
+						size='sm'
+						className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
+					>
+						GET IN TOUCH
+					</Button>
+				</a>
 			</footer>
 		</div>
 	);
