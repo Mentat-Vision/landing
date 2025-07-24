@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 	title: 'Mentat Industries',
 	description: 'Battle-tested tech for modern warfare',
 	icons: {
-		icon: '/mentat-red.png',
+		icon: '/boxRed.png',
 	},
 };
 
