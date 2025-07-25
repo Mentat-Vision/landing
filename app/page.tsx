@@ -23,9 +23,17 @@ export default function Component() {
 	const { theme, setTheme } = useTheme();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
+	const [quote, setQuote] = useState('');
+
+	const quotes = [
+		'“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
+		'“The eye that sees before it is seen”',
+		'“The greatest victory is that which requires no battle.”',
+	];
 
 	useEffect(() => {
 		setIsMounted(true);
+		setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
 	}, []);
 
 	const isDark = theme === 'dark';
@@ -247,11 +255,7 @@ export default function Component() {
 				{/* Left Content - Title */}
 				<div className='flex-1 max-w-2xl z-10'>
 					<h1 className='text-4xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight'>
-						<Typewriter
-							text='“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”
-'
-							speed={30}
-						/>
+						<Typewriter text={quote} speed={30} />
 					</h1>
 				</div>
 
