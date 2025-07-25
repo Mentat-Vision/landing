@@ -23,7 +23,6 @@ export default function Component() {
 	const { theme, setTheme } = useTheme();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
-	const [firstAnimationFinished, setFirstAnimationFinished] = useState(false);
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -252,7 +251,6 @@ export default function Component() {
 							text='“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”
 '
 							speed={30}
-							onFinished={() => setFirstAnimationFinished(true)}
 						/>
 					</h1>
 				</div>
@@ -260,12 +258,11 @@ export default function Component() {
 				{/* Right Content - Description */}
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
-						{firstAnimationFinished && (
-							<Typewriter
-								text='Mentat is a real-time battlefield intelligence engine that fuses video, sensor, and telemetry data from drones, UGVs, cameras, and soldier-worn devices. Using edge AI models for detection, tracking, and summarization, it identifies threats, maps changes, and answers tactical queries via a natural language interface. Designed to run offline on portable compute, Mentat delivers decision-grade awareness to squads and autonomous systems operating at the edge.'
-								speed={10}
-							/>
-						)}
+						<Typewriter
+							text='Mentat is a real-time battlefield intelligence engine that fuses data from drones, UGVs, cameras, and soldier-worn devices. Using edge AI models for detection and tracking, it identifies threats, maps changes, and answers tactical queries. Mentat delivers decision-grade awareness to squads and autonomous systems operating at the edge.'
+							speed={10}
+							startDelay={1000} // Start after 1 second
+						/>
 					</p>
 				</div>
 			</main>

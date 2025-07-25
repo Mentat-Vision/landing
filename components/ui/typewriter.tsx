@@ -7,6 +7,7 @@ interface TypewriterProps {
 	speed?: number;
 	className?: string;
 	onFinished?: () => void;
+	startDelay?: number;
 }
 
 export const Typewriter = ({
@@ -14,26 +15,36 @@ export const Typewriter = ({
 	speed = 50,
 	className,
 	onFinished,
+	startDelay = 0,
 }: TypewriterProps) => {
 	const [displayedText, setDisplayedText] = useState('');
 	const [index, setIndex] = useState(0);
 	const [isFinished, setIsFinished] = useState(false);
+	const [isStarted, setIsStarted] = useState(false);
 
 	useEffect(() => {
-		if (index < text.length) {
+		const startTimeout = setTimeout(() => {
+			setIsStarted(true);
+		}, startDelay);
+
+		return () => clearTimeout(startTimeout);
+	}, [startDelay]);
+
+	useEffect(() => {
+		if (isStarted && index < text.length) {
 			const timeoutId = setTimeout(() => {
 				setDisplayedText((prev) => prev + text.charAt(index));
 				setIndex((prev) => prev + 1);
 			}, speed);
 			return () => clearTimeout(timeoutId);
 		}
-		if (!isFinished) {
+		if (isStarted && !isFinished) {
 			setIsFinished(true);
 			if (onFinished) {
 				onFinished();
 			}
 		}
-	}, [index, text, speed, onFinished, isFinished]);
+	}, [isStarted, index, text, speed, onFinished, isFinished]);
 
 	return <span className={className}>{displayedText}</span>;
 };
