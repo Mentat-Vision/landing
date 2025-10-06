@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Line } from '@react-three/drei';
@@ -20,7 +18,7 @@ function TetrahedronMesh({ color = 'white' }: TetrahedronProps) {
 
 	// Regular tetrahedron vertices - all edges equal length, centered at origin
 	const a = 2.5; // edge length factor
-	const vertices = [
+	const vertices: [number, number, number][] = [
 		[a, a, a],
 		[a, -a, -a],
 		[-a, a, -a],
@@ -28,7 +26,7 @@ function TetrahedronMesh({ color = 'white' }: TetrahedronProps) {
 	];
 
 	// Tetrahedron edges - all 6 edges of equal length
-	const edges = [
+	const edges: [number, number, number][][] = [
 		[vertices[0], vertices[1]], // vertex 0 to 1
 		[vertices[0], vertices[2]], // vertex 0 to 2
 		[vertices[0], vertices[3]], // vertex 0 to 3
