@@ -260,7 +260,7 @@ export default function Component() {
 				</div>
 
 				{/* Right Content - Description */}
-				<div className='flex-1 max-w-md z-10'>
+				{/* <div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
 							// text='Mentat is a real-time battlefield intelligence engine that fuses data from drones, UGVs, cameras, and soldier-worn devices. It uses edge AI models for detection and tracking to identify threats in 2D video feeds while aligning them into a living 4D map of the battlespace. By mapping changes, highlighting risks, and answering tactical queries, Mentat delivers decision-grade awareness to squads and autonomous systems operating at the edge.'
@@ -269,7 +269,7 @@ export default function Component() {
 							startDelay={1000} // Start after 1 second
 						/>
 					</p>
-				</div>
+				</div> */}
 			</main>
 
 			{/* Simplified Footer */}
