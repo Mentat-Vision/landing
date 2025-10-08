@@ -275,7 +275,7 @@ export default function Component() {
 			{/* Simplified Footer */}
 			<footer className='relative z-10 flex items-center justify-between pt-4 pb-8 px-6 lg:px-12'>
 				<div className='text-sm lg:text-base opacity-60 font-medium'>
-					© 2025 Mentat Industries
+					© 2025 Arlo Industries Inc.
 				</div>
 
 				<a href='mailto:deo@arlo1.com'>
