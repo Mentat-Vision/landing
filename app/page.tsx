@@ -208,14 +208,14 @@ export default function Component() {
 					</span>
 				</button>
 
-				{/* <nav className='hidden md:flex items-center gap-8'>
+				<nav className='hidden md:flex items-center gap-8'>
 					<Link
 						href='/manifesto'
 						className={`${hoverColor} transition-colors font-medium tracking-wide text-sm lg:text-base`}
 					>
 						MANIFESTO
 					</Link>
-				</nav> */}
+				</nav>
 
 				<Button
 					variant='ghost'
@@ -260,16 +260,15 @@ export default function Component() {
 				</div>
 
 				{/* Right Content - Description */}
-				{/* <div className='flex-1 max-w-md z-10'>
+				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
-							// text='Mentat is a real-time battlefield intelligence engine that fuses data from drones, UGVs, cameras, and soldier-worn devices. It uses edge AI models for detection and tracking to identify threats in 2D video feeds while aligning them into a living 4D map of the battlespace. By mapping changes, highlighting risks, and answering tactical queries, Mentat delivers decision-grade awareness to squads and autonomous systems operating at the edge.'
-							text='Mentat builds real-time situational awareness software for complex and remote environments. Our platform integrates data from aerial, ground, and sensor sources to provide actionable insights and enhance operational decision-making. By mapping changes, detecting anomalies, and improving visibility, Mentat supports safety, security, and mission-critical operations across challenging terrains.'
+							text='Mentat develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
 					</p>
-				</div> */}
+				</div>
 			</main>
 
 			{/* Simplified Footer */}

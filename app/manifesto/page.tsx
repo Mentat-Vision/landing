@@ -173,10 +173,9 @@ export default function Manifesto() {
 						<p>
 							Conflict is inevitable. As long as there are humans, there will be
 							disagreements, misalignment, and ideologies clashing. Delaying
-							conflict doesn't dissolve it — it compounds it. But the way we
+							conflict doesn't dissolve it, it compounds it. But the way we
 							engage can evolve. Like a debate between educated minds is better
-							than a chaotic fight, war too can become more precise, more
-							efficient, and far less destructive.
+							than a chaotic fight, war too can become more concise & precise.
 						</p>
 
 						<p>
