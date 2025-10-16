@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import { Typewriter } from '@/components/ui/typewriter';
+import NewsletterSignup from '@/components/newsletter-signup';
 
 // Dynamically import the Tetrahedron to avoid SSR issues
 const Tetrahedron = dynamic(() => import('@/components/tetrahedron'), {
@@ -272,20 +273,28 @@ export default function Component() {
 			</main>
 
 			{/* Simplified Footer */}
-			<footer className='relative z-10 flex items-center justify-between pt-4 pb-8 px-6 lg:px-12'>
-				<div className='text-sm lg:text-base opacity-60 font-medium'>
-					© 2025 Arlo Industries Inc.
+			<footer className='relative z-10 flex flex-col items-center justify-center gap-8 pt-8 pb-8 px-6 lg:px-12'>
+				{/* Newsletter Signup */}
+				<div className='w-full max-w-2xl'>
+					<NewsletterSignup />
 				</div>
 
-				<a href='mailto:deo@arlo1.com'>
-					<Button
-						variant='outline'
-						size='sm'
-						className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
-					>
-						GET IN TOUCH
-					</Button>
-				</a>
+				{/* Footer Links */}
+				<div className='flex items-center justify-between w-full max-w-4xl'>
+					<div className='text-sm lg:text-base opacity-60 font-medium'>
+						© 2025 Arlo Industries Inc.
+					</div>
+
+					<a href='mailto:deo@arlo1.com'>
+						<Button
+							variant='outline'
+							size='sm'
+							className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
+						>
+							GET IN TOUCH
+						</Button>
+					</a>
+				</div>
 			</footer>
 		</div>
 	);
