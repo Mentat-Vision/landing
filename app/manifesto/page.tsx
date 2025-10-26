@@ -179,7 +179,7 @@ export default function Manifesto() {
 						</p>
 
 						<p>
-							At Mentat, we build systems that help people make better decisions
+							At Arlo1, we build systems that help people make better decisions
 							in moments that matter most. We fuse drones, sensors, and AI into
 							a unified battlefield intelligence layer that gives operators
 							real-time awareness and clarity under pressure. We believe

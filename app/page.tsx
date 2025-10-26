@@ -25,6 +25,7 @@ export default function Component() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 	const [quote, setQuote] = useState('');
+	const [logoVersion, setLogoVersion] = useState<'a' | 'b'>('a');
 
 	const quotes = [
 		'“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
@@ -35,6 +36,15 @@ export default function Component() {
 	useEffect(() => {
 		setIsMounted(true);
 		setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+	}, []);
+
+	// Toggle logo version every 0.5 seconds for blinking effect
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setLogoVersion((prev) => (prev === 'a' ? 'b' : 'a'));
+		}, 500);
+
+		return () => clearInterval(interval);
 	}, []);
 
 	const isDark = theme === 'dark';
@@ -196,17 +206,14 @@ export default function Component() {
 					className='flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer'
 				>
 					<Image
-						src={isDark ? '/mentat-red.png' : '/mentat.png'}
+						src={
+							isDark ? `/dark${logoVersion}.png` : `/light${logoVersion}.png`
+						}
 						alt='Mentat Industries'
 						width={120}
 						height={40}
 						className='h-8 w-auto'
 					/>
-					<span
-						className={`text-2xl lg:text-3xl font-black ${hoverColor} transition-colors`}
-					>
-						Mentat
-					</span>
 				</button>
 
 				<nav className='hidden md:flex items-center gap-8'>
@@ -264,7 +271,7 @@ export default function Component() {
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
-							text='Mentat develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
+							text='Arlo1 develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
