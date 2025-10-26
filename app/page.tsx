@@ -209,7 +209,7 @@ export default function Component() {
 						src={
 							isDark ? `/dark${logoVersion}.png` : `/light${logoVersion}.png`
 						}
-						alt='Mentat Industries'
+						alt='Arlo Industries'
 						width={120}
 						height={40}
 						className='h-8 w-auto'

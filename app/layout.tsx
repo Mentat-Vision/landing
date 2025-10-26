@@ -10,10 +10,10 @@ const shareTechMono = Share_Tech_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Mentat Industries',
+	title: 'Arlo Industries',
 	description: 'Visions of Victory',
 	icons: {
-		icon: '/boxRed.png',
+		icon: '/box.png',
 	},
 };
 
