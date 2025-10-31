@@ -272,7 +272,7 @@ export default function Component() {
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
 							// text='Arlo1 develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
-							text='Arlo1 develops the future of edge-native systems to improve situational awareness and decision-making in critical applications.'
+							text='Arlo Industries builds advanced sensing and AI-based situational-awareness systems for infrastructure, security, and industrial applications.'
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
