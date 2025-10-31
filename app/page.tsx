@@ -28,9 +28,9 @@ export default function Component() {
 	const [logoVersion, setLogoVersion] = useState<'a' | 'b'>('a');
 
 	const quotes = [
-		'“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
+		// '“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
 		'“The eye that sees before it is seen”',
-		'“The greatest victory is that which requires no battle.”',
+		// '“The greatest victory is that which requires no battle.”',
 	];
 
 	useEffect(() => {
@@ -216,14 +216,14 @@ export default function Component() {
 					/>
 				</button>
 
-				<nav className='hidden md:flex items-center gap-8'>
+				{/* <nav className='hidden md:flex items-center gap-8'>
 					<Link
 						href='/manifesto'
 						className={`${hoverColor} transition-colors font-medium tracking-wide text-sm lg:text-base`}
 					>
 						MANIFESTO
 					</Link>
-				</nav>
+				</nav> */}
 
 				<Button
 					variant='ghost'
@@ -271,7 +271,8 @@ export default function Component() {
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
-							text='Arlo1 develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
+							// text='Arlo1 develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
+							text='Arlo1 develops the future of edge-native systems to improve situational awareness and decision-making in critical applications.'
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
