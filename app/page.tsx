@@ -225,7 +225,7 @@ export default function Component() {
 					</Link>
 				</nav> */}
 
-				<Button
+				{/* <Button
 					variant='ghost'
 					size='icon'
 					className='md:hidden'
@@ -236,7 +236,7 @@ export default function Component() {
 					) : (
 						<Menu className='w-6 h-6' />
 					)}
-				</Button>
+				</Button> */}
 			</header>
 
 			{/* Mobile Menu */}
