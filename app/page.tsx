@@ -28,9 +28,9 @@ export default function Component() {
 	const [logoVersion, setLogoVersion] = useState<'a' | 'b'>('a');
 
 	const quotes = [
-		// '“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
+		'“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
 		'“The eye that sees before it is seen”',
-		// '“The greatest victory is that which requires no battle.”',
+		'“The greatest victory is that which requires no battle.”',
 	];
 
 	useEffect(() => {
@@ -216,16 +216,16 @@ export default function Component() {
 					/>
 				</button>
 
-				{/* <nav className='hidden md:flex items-center gap-8'>
+				<nav className='hidden md:flex items-center gap-8'>
 					<Link
 						href='/manifesto'
 						className={`${hoverColor} transition-colors font-medium tracking-wide text-sm lg:text-base`}
 					>
 						MANIFESTO
 					</Link>
-				</nav> */}
+				</nav>
 
-				{/* <Button
+				<Button
 					variant='ghost'
 					size='icon'
 					className='md:hidden'
@@ -236,7 +236,7 @@ export default function Component() {
 					) : (
 						<Menu className='w-6 h-6' />
 					)}
-				</Button> */}
+				</Button>
 			</header>
 
 			{/* Mobile Menu */}
@@ -271,8 +271,7 @@ export default function Component() {
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
-							// text='Arlo1 develops the future of edge-native systems, allowing soldiers in frontlines to have perfect information and understanding of the developing battlefield. '
-							text='Arlo Industries builds advanced sensing and AI-based situational-awareness systems for infrastructure, security, and industrial applications.'
+							text="Europe is building the drone wall, America is building the golden dome, the world is preparing for the future of drone warfare. It's already here. The problem is, there are too many interceptor drones and too little sensing architecture. We are building Mentat - the world's first optical radar mesh which outperforms current solution by 2-3x the range while being 200x cheaper."
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
