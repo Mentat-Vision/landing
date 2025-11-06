@@ -271,7 +271,7 @@ export default function Component() {
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
-							text="Europe is building the drone wall, America is building the golden dome, the world is preparing for the future of drone warfare. It's already here. The problem is, there are too many interceptor drones and too little sensing architecture. We are building Mentat - the world's first optical radar mesh which outperforms current solution by 2-3x the range while being 200x cheaper."
+							text="Europe is building the drone wall, America is building the golden dome, the world is preparing for the future of drone warfare. It's already here. The problem is, there are too many interceptor drones and too little sensing architecture. We are building Mentat - the world's first optical radar mesh which outperforms current solution by 2-3x the range while being multiple times more cost effective."
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
