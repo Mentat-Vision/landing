@@ -290,15 +290,49 @@ export default function Component() {
 					© 2025 Arlo Industries Inc.
 				</div>
 
-				<a href='mailto:deo@arlo1.com'>
-					<Button
-						variant='outline'
-						size='sm'
-						className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
+				<div className='flex items-center gap-4'>
+					<a
+						href='https://www.linkedin.com/in/deoarlo/'
+						target='_blank'
+						rel='noopener noreferrer'
+						className={`${textColor} ${hoverColor} transition-colors`}
+						aria-label='LinkedIn'
 					>
-						GET IN TOUCH
-					</Button>
-				</a>
+						<svg
+							width='20'
+							height='20'
+							viewBox='0 0 24 24'
+							fill='currentColor'
+						>
+							<path d='M20 0H4a4 4 0 00-4 4v16a4 4 0 004 4h16a4 4 0 004-4V4a4 4 0 00-4-4zM8 19H5V9h3v10zM6.5 8.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-1.34 0-1.84.99-1.84 2.23v4.44H9V9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66V19z' />
+						</svg>
+					</a>
+					<a
+						href='https://x.com/deoarlo'
+						target='_blank'
+						rel='noopener noreferrer'
+						className={`${textColor} ${hoverColor} transition-colors`}
+						aria-label='X (Twitter)'
+					>
+						<svg
+							width='20'
+							height='20'
+							viewBox='0 0 24 24'
+							fill='currentColor'
+						>
+							<path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
+						</svg>
+					</a>
+					<a href='mailto:deo@arlo1.com'>
+						<Button
+							variant='outline'
+							size='sm'
+							className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
+						>
+							GET IN TOUCH
+						</Button>
+					</a>
+				</div>
 			</footer>
 		</div>
 	);
