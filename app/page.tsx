@@ -271,7 +271,8 @@ export default function Component() {
 				<div className='flex-1 max-w-md z-10'>
 					<p className='text-base lg:text-lg leading-relaxed opacity-90 font-medium'>
 						<Typewriter
-							text="Europe is building the drone wall, America is building the golden dome, the world is preparing for the future of drone warfare. It's already here. The problem is, there are too many interceptor drones and too little sensing architecture. We are building Mentat - the world's first optical radar mesh which outperforms current solution by 2-3x the range while being multiple times more cost effective."
+							// text="Europe is building the drone wall, America is building the golden dome, the world is preparing for the future of drone warfare. It's already here. The problem is, there are too many interceptor drones and too little sensing architecture. We are building Mentat - the world's first optical radar mesh which outperforms current solution by 2-3x the range while being multiple times more cost effective."
+							text="Building technologies that win the war"
 							speed={10}
 							startDelay={1000} // Start after 1 second
 						/>
@@ -307,7 +308,7 @@ export default function Component() {
 							<path d='M20 0H4a4 4 0 00-4 4v16a4 4 0 004 4h16a4 4 0 004-4V4a4 4 0 00-4-4zM8 19H5V9h3v10zM6.5 8.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-1.34 0-1.84.99-1.84 2.23v4.44H9V9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66V19z' />
 						</svg>
 					</a>
-					<a
+					{/* <a
 						href='https://x.com/deoarlo'
 						target='_blank'
 						rel='noopener noreferrer'
@@ -322,7 +323,7 @@ export default function Component() {
 						>
 							<path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
 						</svg>
-					</a>
+					</a> */}
 					<a href='mailto:deo@arlo1.com'>
 						<Button
 							variant='outline'
