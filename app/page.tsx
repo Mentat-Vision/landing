@@ -223,6 +223,12 @@ export default function Component() {
 					>
 						MANIFESTO
 					</Link>
+					<Link
+						href='/careers'
+						className={`${hoverColor} transition-colors font-medium tracking-wide text-sm lg:text-base`}
+					>
+						CAREERS
+					</Link>
 				</nav>
 
 				<Button
@@ -253,6 +259,13 @@ export default function Component() {
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							MANIFESTO
+						</Link>
+						<Link
+							href='/careers'
+							className={`block ${hoverColor} transition-colors font-medium tracking-wide text-base py-2`}
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							CAREERS
 						</Link>
 					</div>
 				</div>
@@ -323,7 +336,7 @@ export default function Component() {
 							<path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
 						</svg>
 					</a> */}
-					<a href='mailto:deo@arlo1.com'>
+					<a href='mailto:hi@arlo1.com'>
 						<Button
 							variant='outline'
 							size='sm'
