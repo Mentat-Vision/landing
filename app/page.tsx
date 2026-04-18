@@ -28,14 +28,20 @@ export default function Component() {
 	const [logoVersion, setLogoVersion] = useState<'a' | 'b'>('a');
 
 	const quotes = [
-		'“If you know the enemy and know yourself, you need not fear the result of a hundred battles.”',
+		'“Make Conflict concise and precise.”',
 		'“The eye that sees before it is seen”',
-		'“The greatest victory is that which requires no battle.”',
+		'"A society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'
 	];
 
 	useEffect(() => {
 		setIsMounted(true);
-		setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+		
+		// Cycle sequentially through quotes instead of randomly
+		const currentIndex = parseInt(localStorage.getItem('arlo_quote_index') || '0', 10);
+		setQuote(quotes[currentIndex % quotes.length]);
+		
+		// Save next index for the next visit
+		localStorage.setItem('arlo_quote_index', ((currentIndex + 1) % quotes.length).toString());
 	}, []);
 
 	// Toggle logo version every 0.5 seconds for blinking effect
