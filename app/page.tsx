@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Typewriter } from '@/components/ui/typewriter';
 import NewsletterSignup from '@/components/newsletter-signup';
 
@@ -24,27 +24,41 @@ export default function Component() {
 	const { theme, setTheme } = useTheme();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
-	const [quote, setQuote] = useState('');
+	const [quoteIndex, setQuoteIndex] = useState(0);
 	const [logoVersion, setLogoVersion] = useState<'a' | 'b'>('a');
+	const initRef = useRef(false);
 
 	const quotes = [
+		'“Solving war from first principles.”',
+		'“All warfare is based on deception.” — Sun Tzu',
 		'“Make Conflict concise and precise.”',
 		// '“The eye that sees before it is seen”',
 		// '"A society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'
-		'“All warfare is based on deception.” — Sun Tzu',
-		'“Solving war from first principles.”'
 	];
 
 	useEffect(() => {
+		if (!initRef.current) {
+			initRef.current = true;
+			// Get current index, modulo by length just in case the list shortened
+			const storedIndex = parseInt(localStorage.getItem('arlo_quote_index') || '0', 10);
+			const validIndex = storedIndex % quotes.length;
+			
+			setQuoteIndex(validIndex);
+			
+			// Save the next index for the next refresh
+			localStorage.setItem('arlo_quote_index', ((validIndex + 1) % quotes.length).toString());
+		}
 		setIsMounted(true);
-		
-		// Cycle sequentially through quotes instead of randomly
-		const currentIndex = parseInt(localStorage.getItem('arlo_quote_index') || '0', 10);
-		setQuote(quotes[currentIndex % quotes.length]);
-		
-		// Save next index for the next visit
-		localStorage.setItem('arlo_quote_index', ((currentIndex + 1) % quotes.length).toString());
-	}, []);
+	}, [quotes.length]);
+
+	const handleNextQuote = () => {
+		setQuoteIndex((prev) => {
+			const nextIndex = (prev + 1) % quotes.length;
+			// Sync with localStorage so next refresh continues sequentially from the manually selected quote
+			localStorage.setItem('arlo_quote_index', ((nextIndex + 1) % quotes.length).toString());
+			return nextIndex;
+		});
+	};
 
 	// Toggle logo version every 0.5 seconds for blinking effect
 	useEffect(() => {
@@ -282,9 +296,12 @@ export default function Component() {
 			{/* Main Content - Full Screen */}
 			<main className='relative z-10 flex-grow flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-0 px-6 lg:px-12 py-12 lg:py-24'>
 				{/* Left Content - Title */}
-				<div className='flex-1 max-w-2xl z-10'>
+				<div 
+					className='flex-1 max-w-2xl z-10 cursor-pointer'
+					onClick={handleNextQuote}
+				>
 					<h1 className='text-4xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight'>
-						<Typewriter text={quote} speed={30} />
+						<Typewriter key={quoteIndex} text={quotes[quoteIndex]} speed={30} />
 					</h1>
 				</div>
 
