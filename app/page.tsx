@@ -29,8 +29,10 @@ export default function Component() {
 
 	const quotes = [
 		'“Make Conflict concise and precise.”',
-		'“The eye that sees before it is seen”',
-		'"A society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'
+		// '“The eye that sees before it is seen”',
+		// '"A society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'
+		'“All warfare is based on deception.” — Sun Tzu',
+		'“Solving war from first principles.”'
 	];
 
 	useEffect(() => {
