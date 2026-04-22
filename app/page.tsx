@@ -30,9 +30,9 @@ export default function Component() {
 
 	const quotes = [
 		'“Solving war from first principles.”',
-		'“All warfare is based on deception.” — Sun Tzu',
+		// '“All warfare is based on deception.” — Sun Tzu',
 		'“Make Conflict concise and precise.”',
-		// '“The eye that sees before it is seen”',
+		'“The eye that sees without being seen.”',
 		// '"A society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'
 	];
 
@@ -40,13 +40,19 @@ export default function Component() {
 		if (!initRef.current) {
 			initRef.current = true;
 			// Get current index, modulo by length just in case the list shortened
-			const storedIndex = parseInt(localStorage.getItem('arlo_quote_index') || '0', 10);
+			const storedIndex = parseInt(
+				localStorage.getItem('arlo_quote_index') || '0',
+				10,
+			);
 			const validIndex = storedIndex % quotes.length;
-			
+
 			setQuoteIndex(validIndex);
-			
+
 			// Save the next index for the next refresh
-			localStorage.setItem('arlo_quote_index', ((validIndex + 1) % quotes.length).toString());
+			localStorage.setItem(
+				'arlo_quote_index',
+				((validIndex + 1) % quotes.length).toString(),
+			);
 		}
 		setIsMounted(true);
 	}, [quotes.length]);
@@ -55,7 +61,10 @@ export default function Component() {
 		setQuoteIndex((prev) => {
 			const nextIndex = (prev + 1) % quotes.length;
 			// Sync with localStorage so next refresh continues sequentially from the manually selected quote
-			localStorage.setItem('arlo_quote_index', ((nextIndex + 1) % quotes.length).toString());
+			localStorage.setItem(
+				'arlo_quote_index',
+				((nextIndex + 1) % quotes.length).toString(),
+			);
 			return nextIndex;
 		});
 	};
@@ -296,7 +305,7 @@ export default function Component() {
 			{/* Main Content - Full Screen */}
 			<main className='relative z-10 flex-grow flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-0 px-6 lg:px-12 py-12 lg:py-24'>
 				{/* Left Content - Title */}
-				<div 
+				<div
 					className='flex-1 max-w-2xl z-10 cursor-pointer'
 					onClick={handleNextQuote}
 				>
@@ -336,12 +345,7 @@ export default function Component() {
 						className={`${textColor} ${hoverColor} transition-colors`}
 						aria-label='LinkedIn'
 					>
-						<svg
-							width='20'
-							height='20'
-							viewBox='0 0 24 24'
-							fill='currentColor'
-						>
+						<svg width='20' height='20' viewBox='0 0 24 24' fill='currentColor'>
 							<path d='M20 0H4a4 4 0 00-4 4v16a4 4 0 004 4h16a4 4 0 004-4V4a4 4 0 00-4-4zM8 19H5V9h3v10zM6.5 8.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-1.34 0-1.84.99-1.84 2.23v4.44H9V9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66V19z' />
 						</svg>
 					</a>
