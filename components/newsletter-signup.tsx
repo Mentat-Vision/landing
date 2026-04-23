@@ -106,7 +106,7 @@ export default function NewsletterSignup({
 							${
 								isDark
 									? 'bg-black text-white border-red-500 placeholder-gray-400'
-									: 'bg-white text-black border-red-900 placeholder-gray-500'
+									: 'bg-red-950/35 text-white border-red-900/40 placeholder-red-200/45 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]'
 							}
 							border-2 focus:outline-none focus:ring-2 focus:ring-red-500
 							transition-colors
@@ -117,8 +117,11 @@ export default function NewsletterSignup({
 						type='submit'
 						className={`
 							px-6 py-3 text-sm font-bold tracking-wide uppercase
-							bg-red-500 text-black border-2 border-red-500
-							hover:bg-white hover:text-red-500 hover:border-white
+							${
+								isDark
+									? 'bg-red-500 text-black border-2 border-red-500 hover:bg-white hover:text-red-500 hover:border-white'
+									: 'bg-black text-white border-2 border-black hover:bg-zinc-900 hover:border-zinc-900'
+							}
 							transition-colors whitespace-nowrap
 						`}
 						style={{ fontFamily: 'Inter, sans-serif' }}

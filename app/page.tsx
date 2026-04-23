@@ -21,7 +21,7 @@ const Tetrahedron = dynamic(() => import('@/components/tetrahedron'), {
 });
 
 export default function Component() {
-	const { theme, setTheme } = useTheme();
+	const { theme } = useTheme();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 	const [quoteIndex, setQuoteIndex] = useState(0);
@@ -232,20 +232,21 @@ export default function Component() {
 
 			{/* Header */}
 			<header className='relative z-10 flex items-center justify-between pt-8 pb-4 px-6 lg:px-12'>
-				<button
-					onClick={() => setTheme(isDark ? 'light' : 'dark')}
-					className='flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer'
+				<Link
+					href='/'
+					className='flex items-center gap-3 hover:opacity-80 transition-opacity'
+					aria-label='Arlo Industries – Home'
 				>
 					<Image
 						src={
 							isDark ? `/dark${logoVersion}.png` : `/light${logoVersion}.png`
 						}
-						alt='Arlo Industries'
+						alt=''
 						width={120}
 						height={40}
 						className='h-8 w-auto'
 					/>
-				</button>
+				</Link>
 
 				<nav className='hidden md:flex items-center gap-8'>
 					<Link
@@ -332,9 +333,62 @@ export default function Component() {
 			</main>
 
 			{/* Simplified Footer */}
-			<footer className='relative z-10 flex items-center justify-between w-full pt-8 pb-8 px-6 lg:px-12'>
-				<div className='text-sm lg:text-base opacity-60 font-medium'>
-					© 2025 Arlo Industries Inc.
+			<footer className='relative z-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between w-full pt-8 pb-8 px-6 lg:px-12'>
+				<div className='flex flex-col gap-3'>
+					<div className='flex flex-wrap items-center gap-2'>
+						<div
+							className={`inline-flex items-center gap-1.5 border px-1.5 py-1 ${
+								isDark
+									? 'border-red-500/80 bg-red-950/30'
+									: 'border-white/25 bg-black/25'
+							}`}
+						>
+							<span
+								className={`flex h-4 w-4 shrink-0 items-center justify-center text-[9px] font-bold leading-none sm:text-[10px] bg-red-500 ${
+									isDark ? 'text-black' : 'text-white'
+								}`}
+								aria-hidden
+							>
+								Y
+							</span>
+							<span
+								className={`text-[10px] font-medium tracking-wide sm:text-xs ${
+									isDark ? `${textColor} opacity-95` : 'text-white/95'
+								}`}
+							>
+								Combinator
+							</span>
+						</div>
+						<div
+							className={`inline-flex items-center gap-1.5 border px-1.5 py-1 ${
+								isDark
+									? 'border-red-500/80 bg-red-950/30'
+									: 'border-white/25 bg-black/25'
+							}`}
+						>
+							<span
+								className={`shrink-0 bg-red-500 px-1 py-0.5 text-[9px] font-bold leading-none tracking-tight sm:text-[10px] sm:px-1.5 ${
+									isDark ? 'text-black' : 'text-white'
+								}`}
+							>
+								NVIDIA
+							</span>
+							<span
+								className={`text-[10px] font-medium tracking-wide sm:text-xs ${
+									isDark ? `${textColor} opacity-95` : 'text-white/95'
+								}`}
+							>
+								Inception
+							</span>
+						</div>
+					</div>
+					<p
+						className={`text-sm lg:text-base font-medium ${
+							isDark ? `opacity-60 ${textColor}` : 'text-white/65'
+						}`}
+					>
+						© 2025 Arlo Industries Inc.
+					</p>
 				</div>
 
 				<div className='flex items-center gap-4'>
@@ -342,7 +396,11 @@ export default function Component() {
 						href='https://www.linkedin.com/in/deoarlo/'
 						target='_blank'
 						rel='noopener noreferrer'
-						className={`${textColor} ${hoverColor} transition-colors`}
+						className={`transition-colors ${
+							isDark
+								? `${textColor} ${hoverColor}`
+								: 'text-white hover:text-red-200'
+						}`}
 						aria-label='LinkedIn'
 					>
 						<svg width='20' height='20' viewBox='0 0 24 24' fill='currentColor'>
@@ -369,7 +427,11 @@ export default function Component() {
 						<Button
 							variant='outline'
 							size='sm'
-							className={`${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`}
+							className={
+								isDark
+									? `${buttonBorder} ${buttonText} ${buttonHover} bg-transparent font-medium tracking-wide rounded-none transition-colors text-sm lg:text-base`
+									: 'rounded-none font-medium tracking-wide text-sm !border-2 !border-white/90 !bg-black/30 !text-white transition-colors hover:!bg-black hover:!text-white hover:!border-black lg:text-base'
+							}
 						>
 							GET IN TOUCH
 						</Button>
