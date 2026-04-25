@@ -170,7 +170,7 @@ export default function Manifesto() {
 				<div className='max-w-4xl mx-auto text-center'>
 					<h1 className='text-4xl lg:text-6xl font-bold mb-12'>MANIFESTO</h1>
 
-					<div className='text-lg text-justify max-w-3xl mx-auto opacity-90 leading-relaxed space-y-6'>
+					<div className='text-lg text-justify max-w-3xl mx-auto opacity-90 leading-relaxed space-y-6 pb-8 lg:pb-12'>
 						<p>
 							<span className={highlightClass}>Conflict is inevitable</span>. As long as there are humans, there will be disagreements. Conflict delayed is conflict multiplied. But we can make conflict concise and precise, like an educated argument instead of a bar fight.
 						</p>

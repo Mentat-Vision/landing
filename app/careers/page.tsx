@@ -1,84 +1,96 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 const roles = [
 	{
-		title: 'Mechanical / Systems Engineer',
-		subtitle: '(Field-Deployed Platforms)',
-		description:
-			'You will design, build, and deploy physical systems intended to operate in real-world environments. The work spans mechanical design, opto-mechanical integration, platform hardening, and field modification. You will work closely with sensing hardware, embedded compute, and deployed platforms, and iterate designs based on live testing rather than simulations alone.',
-		details: [
-			'This role is hands-on, fast-moving, and field-oriented.',
-			'Frequent travel is required, including to remote and conflict-affected regions.',
-		],
+		title: 'Founding Distributed Systems & Embedded Engineer',
+		subtitle: '(Networking / Mesh focus)',
+		roleOverview:
+			'Design and build resilient, decentralized communication systems that operate in constrained and unreliable environments. This role spans hardware, firmware, and network behavior under real-world conditions.',
 		responsibilities: [
-			'Design and build mechanical and structural components for deployed systems',
-			'Integrate opto-mechanical assemblies, sensors, antennas, and compute modules',
-			'Support platform integration involving UAVs, ground mounts, or fixed installations',
-			'Perform field testing, diagnostics, and rapid redesign under time constraints',
-			'Work alongside software and electronics engineers to close system-level gaps',
+			'Build and optimize software for distributed edge devices',
+			'Design decentralized networking architectures (ad hoc / peer-to-peer systems)',
+			'Ensure reliable data transfer across constrained links (low bandwidth, intermittent connectivity)',
+			'Integrate communication hardware and validate system-level performance',
+			'Conduct field testing and iterate based on real-world behavior',
 		],
-		skills: [
-			'Mechanical engineering or similar discipline',
-			'Experience with real hardware: aerospace, UAVs, robotics, ISR, or defence systems',
-			'Familiarity with optics, photonics, or sensor mounting is a strong plus',
-			'Comfortable working with embedded systems, power, and thermal constraints',
-			'Military, defence, or field-deployment experience preferred',
-			'Willingness to travel extensively, including to conflict or post-conflict zones',
+		requirements: [
+			'Strong systems engineering ability across hardware and software boundaries',
+			'Experience designing or working with distributed or networked systems',
+			'Understanding of wireless communication tradeoffs (range, power, reliability)',
+			'Ability to debug across multiple layers of a system',
+			'Track record of building and shipping real-world systems',
+		],
+		profileFit: [
+			'Prioritizes working systems over perfect abstractions',
+			'Comfortable operating with incomplete information',
+			'Moves quickly from prototype to field validation',
 		],
 	},
 	{
-		title: 'Sensing / Applied Physics Engineer',
-		subtitle: '',
-		description:
-			'You will work on sensing systems across optical, RF, and hybrid domains. This role involves experimentation with different sensing modalities, signal characteristics, and environmental effects. You will prototype, test, and evaluate systems that must operate under noise, interference, and adversarial conditions.',
-		details: [
-			'The work is exploratory and applied, not academic.',
-			'This role involves on-site testing and travel to challenging environments.',
-		],
+		title: 'Founding Perception & Applied Physics Engineer',
+		subtitle: '(Optical / sensing / spatial reconstruction focus)',
+		roleOverview:
+			'Develop systems that extract structured information from noisy, real-world signals. This role sits at the intersection of physics, geometry, and computation.',
 		responsibilities: [
-			'Work with sensing technologies including optics, photonics, and RF systems',
-			'Experiment with FMCW radar, passive sensing approaches, and multi-sensor setups',
-			'Analyze signal behavior in cluttered and degraded environments',
-			'Support integration of sensing hardware with embedded compute platforms',
-			'Participate in field tests and live evaluations',
+			'Design algorithms for extracting signal from noisy sensor data',
+			'Work with multi-sensor inputs to estimate spatial relationships and motion',
+			'Build models for interpreting real-world signals under uncertainty',
+			'Optimize processing for constrained, edge environments',
+			'Validate performance across varying environmental conditions',
 		],
-		skills: [
-			'Background in physics, electrical engineering, or related field',
-			'Experience with sensing systems such as radar, RF, EO/IR, or photonics',
-			'Familiarity with FMCW radar concepts, signal processing, or detection theory',
-			'Comfortable working with incomplete data and imperfect sensors',
-			'Defence, aerospace, or military R&D experience preferred',
-			'Willingness to travel to field sites, including conflict-adjacent areas',
+		requirements: [
+			'Strong foundation in physics, applied mathematics, or perception systems',
+			'Experience with signal processing, estimation, or spatial reasoning',
+			'Ability to translate theoretical models into robust implementations',
+			'Familiarity with real-world sensor noise and imperfect data',
+			'Experience working on end-to-end systems, not just isolated models',
+		],
+		niceToHave: [
+			'Exposure to multi-sensor systems or spatial reconstruction problems',
+			'Background in imaging systems, optics, or environmental sensing',
+		],
+		profileFit: [
+			'Thinks from first principles',
+			'Comfortable operating without clean data or controlled environments',
 		],
 	},
 	{
-		title: 'UAV / Systems Operations & Partnerships',
-		subtitle: '',
-		description:
-			'You will work at the intersection of engineering, operations, and external partners. This role involves understanding how UAVs and related systems are built, deployed, and countered in real operational contexts, and feeding that knowledge back into engineering decisions.',
-		details: [
-			'This is not a desk role. You will be present where systems are tested and evaluated.',
-			'Significant travel is required, including time spent in active or post-conflict environments.',
-		],
+		title: 'Forward Deployed Growth & Operations Lead',
+		subtitle: '(Global GTM / field ops)',
+		roleOverview:
+			'Drive adoption of early-stage, high-performance systems across both commercial (dual-use) and government/defense environments. This role combines field deployment, business development, and navigation of complex regulatory landscapes across regions.',
 		responsibilities: [
-			'Work with UAV platforms and related systems in field environments',
-			'Support deployments, demonstrations, and pilot programs',
-			'Engage with operators, units, and technical partners',
-			'Translate operational realities into system and product requirements',
-			'Coordinate logistics and on-site execution',
+			'Identify and secure pilot deployments across dual-use and defense contexts',
+			'Operate in the field to validate system performance with real users and environments',
+			'Translate technical capabilities into clear operational value for commercial and institutional stakeholders',
+			'Manage cross-border sales processes, including partnerships, intermediaries, and local operators',
+			'Navigate regulatory and compliance requirements for international deployment (export controls, end-use considerations, etc.)',
+			'Build long-term relationships with early adopters across both private sector and government ecosystems',
+			'Feed structured field insights back into product and engineering teams',
 		],
-		skills: [
-			'Strong familiarity with UAVs, aerospace systems, or defence platforms',
-			'Military or operational experience strongly preferred',
-			'Ability to operate independently in high-pressure environments',
-			'Comfortable bridging technical and operational conversations',
-			'Willingness to travel extensively, including to conflict zones',
+		requirements: [
+			'Experience selling or deploying technical systems in dual-use and/or defense environments',
+			'Working understanding of export controls, compliance frameworks, and cross-border constraints',
+			'Ability to operate across different regulatory regimes and adapt to local market dynamics',
+			'Strong ownership from initial engagement through deployment and iteration',
+			'Clear, structured communication across technical teams, operators, and decision-makers',
+		],
+		niceToHave: [
+			'Experience with government procurement, defense programs, or regulated commercial sectors',
+			'Background working in international markets with complex stakeholder environments',
+			'Familiarity with early-stage or deep tech companies',
+		],
+		profileFit: [
+			'Operates effectively across commercial and defense contexts without friction',
+			'Understands how to position the same system differently depending on user and environment',
+			'Balances speed of execution with regulatory and geopolitical awareness',
+			'Comfortable being deployed in the field as needed',
 		],
 	},
 ];
@@ -86,6 +98,7 @@ const roles = [
 export default function Careers() {
 	const { theme } = useTheme();
 	const [isMounted, setIsMounted] = useState(false);
+	const [openRoleIndex, setOpenRoleIndex] = useState<number | null>(null);
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -187,8 +200,15 @@ export default function Careers() {
 								<div className='absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-current opacity-50' />
 								<div className='absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-current opacity-50' />
 
-								<div className='flex flex-col lg:flex-row gap-8 lg:items-start justify-between'>
-									<div className='flex-1 space-y-6'>
+								<div className='space-y-6'>
+									<button
+										type='button'
+										onClick={() =>
+											setOpenRoleIndex((prev) => (prev === idx ? null : idx))
+										}
+										className='w-full flex items-start justify-between gap-4 text-left'
+										aria-expanded={openRoleIndex === idx}
+									>
 										<div>
 											<h2 className='text-2xl lg:text-3xl font-bold uppercase tracking-wide mb-1'>
 												{role.title}
@@ -199,64 +219,105 @@ export default function Careers() {
 												</p>
 											)}
 										</div>
+										{openRoleIndex === idx ? (
+											<ChevronUp className='w-6 h-6 shrink-0 mt-1 opacity-80' />
+										) : (
+											<ChevronDown className='w-6 h-6 shrink-0 mt-1 opacity-80' />
+										)}
+									</button>
 
-										<div className='space-y-4 text-base opacity-90 leading-relaxed max-w-3xl'>
-											<p>{role.description}</p>
-											<ul className='list-disc pl-5 space-y-1 opacity-80'>
-												{role.details.map((detail, i) => (
-													<li key={i}>{detail}</li>
-												))}
-											</ul>
-										</div>
+									{openRoleIndex === idx && (
+										<div className='flex flex-col lg:flex-row gap-8 lg:items-start justify-between'>
+											<div className='flex-1 space-y-6'>
+												<div>
+													<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
+														Role Overview
+													</h3>
+													<p className='text-base opacity-90 leading-relaxed max-w-3xl'>
+														{role.roleOverview}
+													</p>
+												</div>
 
-										<div className='grid md:grid-cols-2 gap-8 pt-4'>
-											<div>
-												<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
-													Responsibilities
-												</h3>
-												<ul className='space-y-2 text-sm opacity-80'>
-													{role.responsibilities.map((item, i) => (
-														<li key={i} className='flex gap-2 items-start'>
-															<span className='mt-1.5 w-1 h-1 bg-current rounded-full flex-shrink-0' />
-															<span>{item}</span>
-														</li>
-													))}
-												</ul>
+												<div className='grid md:grid-cols-2 gap-8 pt-2'>
+													<div>
+														<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
+															Responsibilities
+														</h3>
+														<ul className='space-y-2 text-sm opacity-80'>
+															{role.responsibilities.map((item, i) => (
+																<li key={i} className='flex gap-2 items-start'>
+																	<span className='mt-1.5 w-1 h-1 bg-current rounded-full flex-shrink-0' />
+																	<span>{item}</span>
+																</li>
+															))}
+														</ul>
+													</div>
+													<div>
+														<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
+															Requirements
+														</h3>
+														<ul className='space-y-2 text-sm opacity-80'>
+															{role.requirements.map((item, i) => (
+																<li key={i} className='flex gap-2 items-start'>
+																	<span className='mt-1.5 w-1 h-1 bg-current rounded-full flex-shrink-0' />
+																	<span>{item}</span>
+																</li>
+															))}
+														</ul>
+													</div>
+												</div>
+
+												{role.niceToHave && (
+													<div>
+														<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
+															Nice to Have
+														</h3>
+														<ul className='space-y-2 text-sm opacity-80'>
+															{role.niceToHave.map((item, i) => (
+																<li key={i} className='flex gap-2 items-start'>
+																	<span className='mt-1.5 w-1 h-1 bg-current rounded-full flex-shrink-0' />
+																	<span>{item}</span>
+																</li>
+															))}
+														</ul>
+													</div>
+												)}
+
+												<div>
+													<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
+														Profile Fit
+													</h3>
+													<ul className='space-y-2 text-sm opacity-80'>
+														{role.profileFit.map((item, i) => (
+															<li key={i} className='flex gap-2 items-start'>
+																<span className='mt-1.5 w-1 h-1 bg-current rounded-full flex-shrink-0' />
+																<span>{item}</span>
+															</li>
+														))}
+													</ul>
+												</div>
 											</div>
-											<div>
-												<h3 className='font-bold mb-3 uppercase text-sm tracking-wider opacity-70'>
-													Skills & Background
-												</h3>
-												<ul className='space-y-2 text-sm opacity-80'>
-													{role.skills.map((item, i) => (
-														<li key={i} className='flex gap-2 items-start'>
-															<span className='mt-1.5 w-1 h-1 bg-current rounded-full flex-shrink-0' />
-															<span>{item}</span>
-														</li>
-													))}
-												</ul>
+
+											<div className='lg:ml-8 flex-shrink-0 pt-2'>
+												<a
+													href={`mailto:join@arlo1.com?subject=Application for ${role.title}`}
+													className='inline-block'
+												>
+													<Button
+														variant='outline'
+														className={`h-auto py-3 px-8 text-lg font-bold uppercase tracking-wider border-2 ${
+															isDark
+																? 'hover:bg-red-500 hover:text-black border-red-500'
+																: 'hover:bg-white hover:text-black border-black'
+														} transition-all duration-300 rounded-none group-hover:scale-105`}
+													>
+														Apply Now
+														<ArrowUpRight className='ml-2 w-5 h-5' />
+													</Button>
+												</a>
 											</div>
 										</div>
-									</div>
-
-									<div className='lg:ml-8 flex-shrink-0 pt-2'>
-										<a
-											href={`mailto:join@arlo1.com?subject=Application for ${role.title}`}
-											className='inline-block'
-										>
-											<Button
-												variant='outline'
-												className={`h-auto py-3 px-8 text-lg font-bold uppercase tracking-wider border-2 ${
-													isDark
-														? 'hover:bg-red-500 hover:text-black border-red-500'
-														: 'hover:bg-white hover:text-black border-black'
-												} transition-all duration-300 rounded-none group-hover:scale-105`}
-											>
-												Apply Now
-												<ArrowUpRight className='ml-2 w-5 h-5' />
-											</Button>
-										</a>
-									</div>
+									)}
 								</div>
 							</div>
 						))}
