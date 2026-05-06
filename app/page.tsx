@@ -31,7 +31,7 @@ export default function Component() {
 	const quotes = [
 		'“Solving war from first principles.”',
 		// '“All warfare is based on deception.” — Sun Tzu',
-		'“Make Conflict concise and precise.”',
+		'“Making Conflict concise and precise.”',
 		'“The eye that sees without being seen.”',
 		// '"A society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'
 	];
