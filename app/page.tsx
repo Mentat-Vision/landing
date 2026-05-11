@@ -337,14 +337,14 @@ export default function Component() {
 				<div className='flex flex-col gap-3'>
 					<div className='flex flex-wrap items-center gap-2'>
 						<div
-							className={`inline-flex items-center gap-1.5 border px-1.5 py-1 ${
+							className={`inline-flex items-center gap-2 border px-2 py-[5px] ${
 								isDark
 									? 'border-red-500/80 bg-red-950/30'
 									: 'border-white/25 bg-black/25'
 							}`}
 						>
 							<span
-								className={`flex h-4 w-4 shrink-0 items-center justify-center text-[9px] font-bold leading-none sm:text-[10px] bg-red-500 ${
+								className={`flex h-[19px] w-[19px] shrink-0 items-center justify-center text-[11px] font-bold leading-none sm:text-[12px] bg-red-500 ${
 									isDark ? 'text-black' : 'text-white'
 								}`}
 								aria-hidden
@@ -352,7 +352,7 @@ export default function Component() {
 								Y
 							</span>
 							<span
-								className={`text-[10px] font-medium tracking-wide sm:text-xs ${
+								className={`text-[12px] font-medium tracking-wide sm:text-[14px] ${
 									isDark ? `${textColor} opacity-95` : 'text-white/95'
 								}`}
 							>
@@ -360,21 +360,21 @@ export default function Component() {
 							</span>
 						</div>
 						<div
-							className={`inline-flex items-center gap-1.5 border px-1.5 py-1 ${
+							className={`inline-flex items-center gap-2 border px-2 py-[5px] ${
 								isDark
 									? 'border-red-500/80 bg-red-950/30'
 									: 'border-white/25 bg-black/25'
 							}`}
 						>
 							<span
-								className={`shrink-0 bg-red-500 px-1 py-0.5 text-[9px] font-bold leading-none tracking-tight sm:text-[10px] sm:px-1.5 ${
+								className={`shrink-0 bg-red-500 px-[5px] py-0.5 text-[11px] font-bold leading-none tracking-tight sm:text-[12px] sm:px-[7px] ${
 									isDark ? 'text-black' : 'text-white'
 								}`}
 							>
 								NVIDIA
 							</span>
 							<span
-								className={`text-[10px] font-medium tracking-wide sm:text-xs ${
+								className={`text-[12px] font-medium tracking-wide sm:text-[14px] ${
 									isDark ? `${textColor} opacity-95` : 'text-white/95'
 								}`}
 							>
@@ -403,8 +403,14 @@ export default function Component() {
 						}`}
 						aria-label='LinkedIn'
 					>
-						<svg width='20' height='20' viewBox='0 0 24 24' fill='currentColor'>
-							<path d='M20 0H4a4 4 0 00-4 4v16a4 4 0 004 4h16a4 4 0 004-4V4a4 4 0 00-4-4zM8 19H5V9h3v10zM6.5 8.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-1.34 0-1.84.99-1.84 2.23v4.44H9V9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66V19z' />
+						<svg
+							width='22'
+							height='22'
+							viewBox='0 0 24 24'
+							fill='currentColor'
+							aria-hidden='true'
+						>
+							<path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.062 2.062 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' />
 						</svg>
 					</a>
 					{/* <a
