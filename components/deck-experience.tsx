@@ -254,7 +254,7 @@ export default function DeckExperience() {
 					style={{
 						left: EDGE,
 						top: 635,
-						width: 185,
+						width: 200,
 						fontSize: 15,
 						lineHeight: 1.33,
 					}}
@@ -396,8 +396,14 @@ export default function DeckExperience() {
 				>
 					INSTITUTIONS
 				</p>
-				<LogoCell src='technion logo.png' style={{ left: 780, top: 158, width: 260, height: 82 }} />
-				<LogoCell src='rensselaer logo.png' style={{ left: 1080, top: 158, width: 260, height: 82 }} />
+				<LogoCell
+					src='technion logo.png'
+					style={{ left: 780, top: 158, width: 260, height: 82 }}
+				/>
+				<LogoCell
+					src='rensselaer logo.png'
+					style={{ left: 1080, top: 158, width: 260, height: 82 }}
+				/>
 				<p
 					className={`${styles.abs} ${styles.mono} ${styles.red} ${styles.medium}`}
 					style={{ left: 780, top: 278, fontSize: 17 }}
@@ -405,12 +411,12 @@ export default function DeckExperience() {
 					PROGRAMS
 				</p>
 				{[
-					['ycombinator logo.png', 780, 322, 170, 72],
-					['17tech logo.png', 980, 322, 170, 72],
-					['ewor logo.png', 1180, 322, 170, 72],
-					['fr8 logo.png', 780, 418, 170, 72],
-					['the residency logo.png', 980, 418, 170, 72],
-					['founders inc logo.png', 1180, 418, 170, 72],
+					['ycombinator logo.png', 780, 320, 180, 74],
+					['17tech logo.png', 980, 320, 180, 74],
+					['ewor logo.png', 1180, 320, 180, 74],
+					['fr8 logo.png', 780, 420, 180, 74],
+					['the residency logo.png', 980, 420, 180, 74],
+					['founders inc logo.png', 1180, 420, 180, 74],
 				].map(([src, left, top, width, height]) => (
 					<LogoCell
 						key={src as string}
@@ -429,8 +435,14 @@ export default function DeckExperience() {
 				>
 					TESTING PARTNERS
 				</p>
-				<LogoCell src='jifx logo.png' style={{ left: 780, top: 560, width: 260, height: 58 }} />
-				<LogoCell src='defence builder logo.png' style={{ left: 1080, top: 560, width: 260, height: 58 }} />
+				<LogoCell
+					src='jifx logo.png'
+					style={{ left: 780, top: 560, width: 260, height: 58 }}
+				/>
+				<LogoCell
+					src='defence builder logo.png'
+					style={{ left: 1080, top: 560, width: 260, height: 58 }}
+				/>
 				<Img
 					src='17tech finland with defence builder ukraine.png'
 					style={{ left: 780, top: 638, width: 260, height: 92 }}
@@ -488,22 +500,24 @@ export default function DeckExperience() {
 				</BulletList>
 				<Img
 					src='missile explosion around my apartment in tel aviv.png'
+					className={styles.photoContain}
 					style={{
-						left: 1170,
+						left: 1080,
 						top: 150,
-						width: 160,
+						width: 250,
 						height: 130,
 						objectPosition: 'top center',
 					}}
 				/>
-				<Caption style={{ left: 1170, top: 292, width: 160 }}>
+				<Caption style={{ left: 1080, top: 292, width: 250 }}>
 					Rocket Passes Iron Dome
 				</Caption>
 				<Img
 					src='missile explosions around my apartment in tel aviv.png'
-					style={{ left: 1045, top: 380, width: 285, height: 130 }}
+					className={styles.photoContain}
+					style={{ left: 1080, top: 365, width: 250, height: 130 }}
 				/>
-				<Caption style={{ left: 1045, top: 522, width: 285 }}>
+				<Caption style={{ left: 1080, top: 507, width: 250 }}>
 					Rockets Around My Apartment in Tel Aviv
 				</Caption>
 				<Img
@@ -526,12 +540,12 @@ export default function DeckExperience() {
 				<Img
 					src='us golden dome news pic.png'
 					className={styles.photoContain}
-					style={{ left: 780, top: 610, width: 250, height: 130 }}
+					style={{ left: 780, top: 610, width: 260, height: 130 }}
 				/>
 				<Img
 					src='eu drone wall news.png'
 					className={styles.photoContain}
-					style={{ left: 1080, top: 610, width: 250, height: 130 }}
+					style={{ left: 1080, top: 610, width: 280, height: 130 }}
 				/>
 			</Slide>
 
@@ -565,7 +579,7 @@ export default function DeckExperience() {
 						'low fidelity',
 						' while RF radars offer high fidelity but are scarce and ',
 						"doesn't scale",
-						980,
+						1000,
 					],
 				].map(([src, before, hi1, mid, hi2, left]) => (
 					<div key={src as string}>
@@ -573,7 +587,7 @@ export default function DeckExperience() {
 							src={src as string}
 							style={{
 								left: left as number,
-								top: 245,
+								top: 235,
 								width: 360,
 								height: 200,
 							}}
@@ -581,9 +595,9 @@ export default function DeckExperience() {
 						<Box
 							style={{
 								left: left as number,
-								top: 485,
+								top: 470,
 								width: 360,
-								height: 190,
+								height: 205,
 							}}
 						>
 							<p
@@ -605,13 +619,13 @@ export default function DeckExperience() {
 				))}
 				<p
 					className={`${styles.abs} ${styles.mono} ${styles.underline}`}
-					style={{ left: 530, top: 704, width: 360, fontSize: 18 }}
+					style={{ left: 530, top: 710, width: 360, fontSize: 18 }}
 				>
 					Ukrainian analysis on frontline sensing gaps
 				</p>
 				<p
 					className={`${styles.abs} ${styles.mono} ${styles.underline}`}
-					style={{ left: 980, top: 704, width: 360, fontSize: 18 }}
+					style={{ left: 1000, top: 710, width: 360, fontSize: 18 }}
 				>
 					CSIS report on distributed Mesh Sensing
 				</p>
@@ -644,6 +658,7 @@ export default function DeckExperience() {
 				</p>
 				<Img
 					src='mockup tall prototype.png'
+					className={styles.photoContain}
 					style={{ left: 80, top: 270, width: 300, height: 440 }}
 				/>
 				<Box style={{ left: 430, top: 270, width: 430, height: 440 }}>
@@ -681,17 +696,17 @@ export default function DeckExperience() {
 				<Img
 					src='mentat screenshot dashboard tracking planes .png'
 					className={styles.photoContain}
-					style={{ left: 980, top: 270, width: 330, height: 205 }}
+					style={{ left: 1030, top: 270, width: 330, height: 205 }}
 				/>
-				<Caption style={{ left: 980, top: 488, width: 330 }}>
+				<Caption style={{ left: 1030, top: 488, width: 330 }}>
 					Tracking Planes Flying in Formation
 				</Caption>
 				<Img
 					src='mentat data showcase comparing tracking planes vs bird noise.png'
 					className={styles.photoContain}
-					style={{ left: 980, top: 555, width: 330, height: 130 }}
+					style={{ left: 1030, top: 555, width: 330, height: 130 }}
 				/>
-				<Caption style={{ left: 980, top: 700, width: 330 }}>
+				<Caption style={{ left: 1030, top: 700, width: 330 }}>
 					Birds (left) vs Plane Being Detected
 				</Caption>
 			</Slide>
@@ -853,11 +868,11 @@ export default function DeckExperience() {
 				</p>
 				<Img
 					src='deo chat with ukraine border guard1.png'
-					style={{ left: 80, top: 500, width: 310, height: 220 }}
+					style={{ left: 80, top: 500, width: 287, height: 220 }}
 				/>
 				<Img
 					src='deo chat with ukraine border guard2.png'
-					style={{ left: 410, top: 500, width: 310, height: 220 }}
+					style={{ left: 388, top: 500, width: 287, height: 220 }}
 				/>
 				<p
 					className={`${styles.abs} ${styles.mono} ${styles.privacy}`}
@@ -873,7 +888,13 @@ export default function DeckExperience() {
 				</h1>
 				<div
 					className={`${styles.abs} ${styles.timeline}`}
-					style={{ left: 780, top: 124, width: 585, fontSize: 14, lineHeight: 1.32 }}
+					style={{
+						left: 780,
+						top: 124,
+						width: 580,
+						fontSize: 13.2,
+						lineHeight: 1.36,
+					}}
 				>
 					<p>Q1: Field Testing with Defence Partners</p>
 					<ul>
@@ -961,7 +982,7 @@ export default function DeckExperience() {
 				</h2>
 				<p
 					className={`${styles.abs} ${styles.mono} ${styles.medium}`}
-					style={{ left: 80, top: 718, fontSize: 20 }}
+					style={{ left: 80, top: 720, fontSize: 17, fontWeight: 500 }}
 				>
 					DEO@ARLO1.COM
 				</p>
